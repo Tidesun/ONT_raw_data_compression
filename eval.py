@@ -10,7 +10,7 @@ def ctc_loss(y_true,y_pred):
         logit_length=tf.fill([tf.shape(y_pred)[0]], tf.shape(y_pred)[1]),
 #         ignore_longer_outputs_than_inputs=True,
         logits_time_major=False,
-        blank_index=-1,
+        blank_index=0,
         label_length=None)
 # for evaluation
 class ONTRawSignalsCompressor(tf.keras.Model):
