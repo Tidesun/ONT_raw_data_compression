@@ -51,9 +51,9 @@ def make_raw_signals_codec(trainer):
     decompressor = ONTRawSignalsDecompressor(entropy_model, trainer.synthesis_transform)
     classifier = ONTRawSignlsClassifier(trainer.classifier,trainer.analysis_transform)
     return compressor, decompressor,classifier
-def predict(test_case_X,test_case_y,pre_trained_model_path='pretrained/lmbda_2000/'):
+def predict(test_case_X,test_case_y,pre_trained_model_path='pretrained/checkpoints_lmbda_8000/'):
     latent_dims = 64
-    lmbda = 2000
+    lmbda = 8000
     num_epochs = 1000
     trainer = ONTRawSignalsCompressionTrainer(latent_dims)
     trainer.compile(
